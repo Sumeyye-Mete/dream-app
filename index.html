@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Note Manager</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<div id="spinner">
+			<div class="spinner-border text-light" role="status">
+				<span class="sr-only">Loading...</span>
+			</div>
+		</div>
+		<div id="container" class="container">
+			<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-5">
+			</div>
+		</div>
+
+		<div class="add-note-form d-none">
+			<form id="frmAddNote" class="needs-validation" novalidate>
+				<div class="fieldset">
+					<div class="mb-3">
+						<input
+							type="text"
+							class="form-control"
+							id="title"
+							placeholder="Title"
+							maxlength="20"
+							required
+						/>
+						<div class="invalid-feedback">Title is required</div>
+					</div>
+					<div class="mb-3">
+						<input
+							class="form-control"
+							id="note"
+							placeholder="Type your note"
+							maxlength="80"
+							required
+						/>
+						<div class="invalid-feedback">Note text is required</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-sm-2 text-center text-sm-start">
+							<label class="text-light">Note color: </label>
+						</div>
+						<div class="col-sm-6 text-center text-sm-start">
+							<input
+								type="radio"
+								class="btn-check"
+								name="colors"
+								id="light"
+								required
+								checked
+							/>
+							<label class="btn btn-light" for="light"></label>
+							<input
+								type="radio"
+								class="btn-check"
+								name="colors"
+								id="primary"
+								required
+							/>
+							<label class="btn btn-primary" for="primary"></label>
+							<input
+								type="radio"
+								class="btn-check"
+								name="colors"
+								id="secondary"
+								required
+							/>
+							<label class="btn btn-secondary" for="secondary"></label>
+							<input
+								type="radio"
+								class="btn-check"
+								name="colors"
+								id="success"
+								required
+							/>
+							<label class="btn btn-success" for="success"></label>
+							<input
+								type="radio"
+								class="btn-check"
+								name="colors"
+								id="danger"
+								required
+							/>
+							<label class="btn btn-danger" for="danger"></label>
+							<input
+								type="radio"
+								class="btn-check"
+								name="colors"
+								id="warning"
+								required
+							/>
+							<label class="btn btn-warning" for="warning"></label>
+							<input
+								type="radio"
+								class="btn-check"
+								name="colors"
+								id="info"
+								required
+							/>
+							<label class="btn btn-info" for="info"></label>
+						</div>
+						<div class="col-sm-4 text-center text-sm-end mt-3 mt-sm-0">
+							<button id="btnHideForm" type="button" class="btn btn-secondary"
+								><i class="fas fa-times"></i
+							></button>
+							<button id="btnAddNote" type="button" class="btn btn-primary"
+								><i class="fas fa-plus"></i
+							></button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="btnSerious" class="btn-serious">
+			<span class="icon"
+				><a
+					href="https://www.w3schools.com/js/js_this.asp"
+					class="text-decoration-none text-black"
+					target="_blank"
+					><i class="fa-solid fa-glasses" title="go to serious theme"></i></a
+			></span>
+		</div>
+		<div id="btnDarkMode" class="btn-dark-mode">
+			<span class="icon"> <i class="fas fa-moon"></i></span>
+		</div>
+		<div id="btnShowAddNoteForm" class="btn-add-note">
+			<span class="icon"><i class="fas fa-plus"></i></span>
+		</div>
+
+		<script src="./js/script.js" type="module"></script>
+	</body>
+</html>

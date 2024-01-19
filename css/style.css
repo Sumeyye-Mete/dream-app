@@ -1,0 +1,119 @@
+:root {
+	--color1: #ffc107;
+}
+body {
+	padding: 2rem;
+	background-image: url(../img/bg-light-photo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+	min-height: 100vh;
+}
+.dark-mode {
+	background-image: url(../img/bg-photo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+	min-height: 100vh;
+}
+.btn-dark-mode,
+.btn-add-note,
+.btn-serious {
+	position: fixed;
+	z-index: 99;
+	bottom: 1rem;
+	right: 1rem;
+	font-size: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	overflow: hidden;
+}
+.btn-dark-mode .icon,
+.btn-add-note .icon,
+.btn-serious .icon {
+	width: 3rem;
+	height: 3rem;
+	background-color: var(--color1);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #8c6900;
+}
+.btn-dark-mode {
+	bottom: 5rem;
+}
+.btn-serious {
+	bottom: 9rem;
+}
+.add-note-form {
+	padding: 2rem;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(12, 45, 56, 0.8);
+	transition: all 2s;
+}
+.add-note-form > form > div {
+	margin: 0 auto;
+	width: 50vw;
+}
+
+input[name="colors"]:checked + label {
+	box-shadow: 0 0 10px black !important;
+	border: 1px gray solid !important;
+}
+#spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 200;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.cloud {
+	min-width: 250px;
+	max-width: 250px;
+	height: 200px;
+	font-size: 200px;
+	position: relative;
+}
+
+.cloud .cloud-text-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	padding-top: 60px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
+	font-size: initial;
+	color: initial;
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+	text-transform: capitalize;
+}
+.cloud .btn-close-cloud {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.cloud-text-container div.note {
+	flex: 1 1 auto;
+	max-width: 200px;
+	text-align: center;
+}
