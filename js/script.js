@@ -5,7 +5,7 @@ import { createNote, deleteNote, getNotes } from "./api.js";
 // dark mode switch
 document.getElementById("btnDarkMode").addEventListener("click", () => {
 	document.querySelector("body").classList.toggle("dark-mode");
-	const icon = btnDarkModeEl.querySelector("i");
+	const icon = document.querySelector("#btnDarkMode i");
 	icon.classList.toggle("fa-moon");
 	icon.classList.toggle("fa-sun");
 });
@@ -20,7 +20,7 @@ document.getElementById("btnHideForm").addEventListener("click", () => {
 	toggleAddNoteForm();
 });
 
-//notu kaydet ve yolla
+//save and send
 document.getElementById("btnAddNote").addEventListener("click", async () => {
 	//form validation
 	const titleEl = document.getElementById("title");
@@ -37,17 +37,13 @@ document.getElementById("btnAddNote").addEventListener("click", async () => {
 		color ??= "light";
 
 		const newNote = {
-			title: title, // title, boyle de olur key value ayni olunca boyle yazilabiliyor.
+			title: title,
 			note: note,
 			color: color,
 		};
-
-		//apiya yeni not kaydetme
 		const data = await createNote(newNote);
-		// Sayfaya, eklenen note ile alakalı card ekle
 		const row = document.querySelector("#container .row");
 		createNoteElement(data, row);
-		// Reset
 		reset(titleEl, noteEl);
 	} catch (err) {
 		alert(err.message);
@@ -119,9 +115,9 @@ const createNoteHTML = (data) => {
 
 const createNoteElement = (data, row) => {
 	const newNoteHtml = createNoteHTML(data);
-	// DOMa yerlestir.
+	
 	row.insertAdjacentHTML("afterbegin", newNoteHtml);
-	// carpiya basinca silme islemi tanimlama
+
 	const btnDelete = row.querySelector(`div[data-id="${data.id}"] button`);
 	btnDelete.addEventListener("click", async () => {
 		await removeNoteElement(data.id);
