@@ -1,4 +1,4 @@
-# Dream Serious App
+# Dream App
 
 Welcome to my web page project, where I've used HTML, CSS, vanilla JS and mock API to create a beautiful, responsive and interactive web page.
 
