@@ -56,6 +56,11 @@ document.getElementById("btnAddNote").addEventListener("click", async () => {
 
 //add note form open/close switch
 const toggleAddNoteForm = () => {
+	window.scrollTo({
+		top: 0,
+		left: 0,
+		behavior: "instant",
+	});
 	document.querySelector(".add-note-form").classList.toggle("d-none");
 	const icon = document.querySelector("#btnShowAddNoteForm i");
 	icon.classList.toggle("fa-plus");
@@ -115,7 +120,7 @@ const createNoteHTML = (data) => {
 
 const createNoteElement = (data, row) => {
 	const newNoteHtml = createNoteHTML(data);
-	
+
 	row.insertAdjacentHTML("afterbegin", newNoteHtml);
 
 	const btnDelete = row.querySelector(`div[data-id="${data.id}"] button`);
